@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Contact - Martin Faith" %}{% endblock %}
+
+{% block content %}
+<!-- Contact Header -->
+<section class="page-header bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">{% trans "Contact Us" %}</h1>
+        <p class="lead">{% trans "We'd love to hear from you" %}</p>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<section class="contact-content py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="mb-4">{% trans "Send a Message" %}</h2>
+                        
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">{% trans "Your Name" %}</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">{% trans "Email Address" %}</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">{% trans "Subject" %}</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">{% trans "Message" %}</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane me-2"></i> {% trans "Send Message" %}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">{% trans "Contact Information" %}</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <ul class="list-unstyled contact-info">
+                            {% if about and about.email %}
+                                <li class="d-flex mb-3">
+                                    <div class="icon-box me-3">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">{% trans "Email" %}</h6>
+                                        <p class="mb-0">{{ about.email }}</p>
+                                    </div>
+                                </li>
+                            {% else %}
+                                <li class="d-flex mb-3">
+                                    <div class="icon-box me-3">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">{% trans "Email" %}</h6>
+                                        <p class="mb-0">info@martinfaith.com</p>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            
+                            {% if about and about.phone %}
+                                <li class="d-flex mb-3">
+                                    <div class="icon-box me-3">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">{% trans "Phone" %}</h6>
+                                        <p class="mb-0">{{ about.phone }}</p>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        </ul>
+                        
+                        {% if about and about.facebook or about.twitter or about.instagram or about.youtube %}
+                            <h6 class="mt-4 mb-3">{% trans "Connect With Us" %}</h6>
+                            <div class="social-links d-flex">
+                                {% if about.facebook %}
+                                    <a href="{{ about.facebook }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                {% endif %}
+                                {% if about.twitter %}
+                                    <a href="{{ about.twitter }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                {% endif %}
+                                {% if about.instagram %}
+                                    <a href="{{ about.instagram }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                {% endif %}
+                                {% if about.youtube %}
+                                    <a href="{{ about.youtube }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">{% trans "Quick Links" %}</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="{% url 'about:index' %}" class="text-decoration-none">
+                                    <i class="fas fa-info-circle me-2 text-primary"></i> {% trans "About Us" %}
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'faq:home' %}" class="text-decoration-none">
+                                    <i class="fas fa-question-circle me-2 text-primary"></i> {% trans "FAQ" %}
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'testimonials:submit' %}" class="text-decoration-none">
+                                    <i class="fas fa-comment-alt me-2 text-primary"></i> {% trans "Share Your Story" %}
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'bible:home' %}" class="text-decoration-none">
+                                    <i class="fas fa-bible me-2 text-primary"></i> {% trans "Bible Verses" %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(48, 86, 211, 0.1);
+        color: #3056D3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+    .contact-info h6 {
+        color: #111827;
+        font-weight: 600;
+    }
+    .contact-info p {
+        color: #4B5563;
+    }
+</style>
+{% endblock %}

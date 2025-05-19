@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Testimonials - Martin Faith" %}{% endblock %}
+
+{% block content %}
+<!-- Testimonials Header -->
+<section class="page-header bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">{% trans "Testimonials" %}</h1>
+        <p class="lead">{% trans "Real stories of faith and transformation from around the world" %}</p>
+        <div class="mt-4">
+            <a href="{% url 'testimonials:submit' %}" class="btn btn-light">
+                <i class="fas fa-plus-circle me-2"></i> {% trans "Share Your Story" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Content -->
+<section class="testimonials-content py-5">
+    <div class="container">
+        <div class="row g-4">
+            {% for testimony in testimony_list %}
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                {% if testimony.author_image %}
+                                    <img src="{{ testimony.author_image.url }}" class="rounded-circle me-3" width="50" height="50" alt="{{ testimony.author }}">
+                                {% else %}
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                        <span class="fs-4">{{ testimony.author|first }}</span>
+                                    </div>
+                                {% endif %}
+                                <div>
+                                    <h5 class="card-title mb-0">{{ testimony.title }}</h5>
+                                    <p class="card-subtitle text-muted">{{ testimony.author }}</p>
+                                </div>
+                            </div>
+                            <div class="testimony-excerpt mb-3">
+                                {{ testimony.content|safe|truncatewords_html:30 }}
+                            </div>
+                            <a href="{{ testimony.get_absolute_url }}" class="btn btn-sm btn-primary">{% trans "Read Full Story" %}</a>
+                        </div>
+                        <div class="card-footer bg-white text-muted small">
+                            <div class="d-flex align-items-center">
+                                <span class="me-3"><i class="far fa-calendar-alt me-1"></i> {{ testimony.created_at|date:"M d, Y" }}</span>
+                                <span class="me-3"><i class="far fa-eye me-1"></i> {{ testimony.views }}</span>
+                                <span class="me-3"><i class="far fa-heart me-1"></i> {{ testimony.likes }}</span>
+                                <span><i class="far fa-comment me-1"></i> {{ testimony.comments.count }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-comment-alt fa-4x text-muted mb-3"></i>
+                    <h4>{% trans "No testimonials available" %}</h4>
+                    <p>{% trans "Be the first to share your story!" %}</p>
+                    <a href="{% url 'testimonials:submit' %}" class="btn btn-primary mt-3">
+                        {% trans "Share Your Story" %}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Pagination -->
+        {% if testimony_list.has_other_pages %}
+            <nav class="mt-5" aria-label="Testimonials pagination">
+                <ul class="pagination justify-content-center">
+                    {% if testimony_list.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ testimony_list.previous_page_number }}">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link"><i class="fas fa-angle-left"></i></span>
+                        </li>
+                    {% endif %}
+                    
+                    {% for i in testimony_list.paginator.page_range %}
+                        {% if testimony_list.number == i %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ i }}</span>
+                            </li>
+                        {% else %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if testimony_list.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ testimony_list.next_page_number }}">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link"><i class="fas fa-angle-right"></i></span>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2>{% trans "Your Story Matters" %}</h2>
+                <p class="lead mb-0">{% trans "Sharing your testimony can inspire others and bring glory to God. Everyone has a unique journey worth sharing." %}</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a href="{% url 'testimonials:submit' %}" class="btn btn-primary btn-lg">
+                    {% trans "Share Your Testimony" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hover-card {
+        transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .testimony-excerpt {
+        line-height: 1.6;
+    }
+</style>
+{% endblock %}

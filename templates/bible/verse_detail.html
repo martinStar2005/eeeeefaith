@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ verse.get_reference }} - {% trans "Bible" %}{% endblock %}
+
+{% block content %}
+<section class="verse-detail py-5">
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="mb-4">{{ verse.get_reference }}</h1>
+                <div class="verse-text bg-light p-4 rounded mb-4">
+                    <p class="lead mb-0">"{{ verse.text }}"</p>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <span class="me-3"><i class="far fa-eye me-1"></i> {{ verse.views }}</span>
+                    <span class="me-3"><i class="far fa-heart me-1"></i> {{ verse.likes }}</span>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <a href="{% url 'bible:chapter' book_id=book.id chapter_num=chapter.number %}" class="btn btn-primary">
+                        {% trans "View Chapter" %}
+                    </a>
+                    <button class="btn btn-outline-danger like-button" data-content-type="{{ content_type_id }}" data-object-id="{{ verse.id }}">
+                        <i class="far fa-heart me-1"></i> {% trans "Like" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ book.name }} - {% trans "Bible" %} - Martin Faith{% endblock %}
+
+{% block content %}
+<!-- Book Header -->
+<section class="page-header bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">{{ book.name }}</h1>
+        <p class="lead">{{ book.description }}</p>
+    </div>
+</section>
+
+<!-- Book Content -->
+<section class="book-content py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <nav aria-label="breadcrumb" class="mb-4">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'core:home' %}">{% trans "Home" %}</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'bible:home' %}">{% trans "Bible" %}</a></li>
+                                <li class="breadcrumb-item active">{{ book.name }}</li>
+                            </ol>
+                        </nav>
+
+                        <!-- Chapters Grid -->
+                        <h2 class="mb-4">{% trans "Chapters" %}</h2>
+                        <div class="row g-3">
+                            {% for chapter in chapters %}
+                                <div class="col-6 col-sm-4 col-md-3">
+                                    <a href="{% url 'bible:chapter' book_id=book.id chapter_num=chapter.number %}"
+                                       class="btn btn-outline-primary w-100">
+                                        {% trans "Chapter" %} {{ chapter.number }}
+                                    </a>
+                                </div>
+                            {% empty %}
+                                <div class="col-12">
+                                    <p class="text-muted text-center">{% trans "No chapters available." %}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Description -->
+                {% if book.description %}
+                    <div class="card shadow-sm mt-4">
+                        <div class="card-header bg-light">
+                            <h3 class="h5 mb-0">{% trans "About This Book" %}</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0">{{ book.description }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Quick Navigation -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h4 class="h5 mb-0">{% trans "Quick Navigation" %}</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            {% with prev_book=book.get_previous_by_order %}
+                                {% if prev_book %}
+                                    <a href="{% url 'bible:book' pk=prev_book.id %}" class="btn btn-outline-primary">
+                                        <i class="fas fa-arrow-left me-2"></i>{{ prev_book.name }}
+                                    </a>
+                                {% endif %}
+                            {% endwith %}
+
+                            {% with next_book=book.get_next_by_order %}
+                                {% if next_book %}
+                                    <a href="{% url 'bible:book' pk=next_book.id %}" class="btn btn-outline-primary">
+                                        {{ next_book.name }}<i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Resources -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h4 class="h5 mb-0">{% trans "Study Resources" %}</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="{% url 'bible:search' %}" class="text-decoration-none">
+                                    <i class="fas fa-search me-2 text-primary"></i>{% trans "Search Bible" %}
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'testimonials:list' %}" class="text-decoration-none">
+                                    <i class="fas fa-users me-2 text-primary"></i>{% trans "Testimonials" %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .btn-outline-primary:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease;
+    }
+</style>
+{% endblock %}

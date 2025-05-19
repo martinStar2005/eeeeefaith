@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Search Results" %} - {% trans "Bible" %}{% endblock %}
+
+{% block content %}
+<section class="search-results py-5">
+    <div class="container">
+        <!-- Search Form -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <form action="{% url 'bible:search' %}" method="get" class="d-flex gap-2">
+                    <input type="text" name="q" class="form-control form-control-lg" value="{{ query }}" placeholder="{% trans 'Search the Bible...' %}">
+                    <button type="submit" class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="mb-4">
+                    {% if query %}
+                        {% trans "Search Results for" %}: "{{ query }}"
+                    {% else %}
+                        {% trans "Search Results" %}
+                    {% endif %}
+                </h2>
+
+                {% if results %}
+                    <div class="results-list">
+                        {% for verse in results %}
+                            <div class="result-item mb-4 p-4 bg-light rounded">
+                                <p class="lead mb-2">"{{ verse.text }}"</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted">{{ verse.get_reference }}</span>
+                                    <a href="{{ verse.get_absolute_url }}" class="btn btn-primary btn-sm">{% trans "Read" %}</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        <!-- Pagination -->
+                        {% if results.has_other_pages %}
+                            <nav class="mt-4">
+                                <ul class="pagination justify-content-center">
+                                    {% if results.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?q={{ query }}&page={{ results.previous_page_number }}">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% for i in results.paginator.page_range %}
+                                        <li class="page-item {% if results.number == i %}active{% endif %}">
+                                            <a class="page-link" href="?q={{ query }}&page={{ i }}">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+
+                                    {% if results.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?q={{ query }}&page={{ results.next_page_number }}">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-5">
+                        {% if query %}
+                            <p class="text-muted mb-0">{% trans "No results found for your search." %}</p>
+                        {% else %}
+                            <p class="text-muted mb-0">{% trans "Enter a search term to find verses." %}</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,375 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Martin Faith - Coming to Christian" %}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero min-vh-100 d-flex align-items-center position-relative overflow-hidden">
+    <div class="hero-bg"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold text-white mb-4 animate__animated animate__fadeInUp">
+                    {% trans "Discover Your Faith Journey" %}
+                </h1>
+                <p class="lead text-white mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+                    {% trans "Explore the Bible, find inspiration, and connect with a community of believers on your path to Christianity." %}
+                </p>
+                <div class="d-flex gap-3 animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="{% url 'bible:home' %}" class="btn btn-light btn-lg">
+                        <i class="fas fa-book-open me-2"></i>{% trans "Read Bible" %}
+                    </a>
+                    <a href="{% url 'testimonials:submit' %}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-share me-2"></i>{% trans "Share Story" %}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="https://images.pexels.com/photos/267559/pexels-photo-267559.jpeg" alt="Bible" class="img-fluid rounded-3 shadow-lg animate__animated animate__fadeInRight">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features py-7 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-6 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">{% trans "What We Offer" %}</h2>
+                <p class="lead text-muted">{% trans "Discover resources and community support for your faith journey" %}</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card h-100 p-4 bg-white rounded-3 shadow-sm">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-bible fa-2x text-primary"></i>
+                    </div>
+                    <h3 class="h4 mb-3">{% trans "Bible Study" %}</h3>
+                    <p class="text-muted mb-4">{% trans "Access and study Bible verses with commentary and insights." %}</p>
+                    <a href="{% url 'bible:home' %}" class="btn btn-outline-primary btn-sm">
+                        {% trans "Explore" %} <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card h-100 p-4 bg-white rounded-3 shadow-sm">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-newspaper fa-2x text-primary"></i>
+                    </div>
+                    <h3 class="h4 mb-3">{% trans "Christian News" %}</h3>
+                    <p class="text-muted mb-4">{% trans "Stay updated with news about Christians worldwide." %}</p>
+                    <a href="{% url 'news:list' %}" class="btn btn-outline-primary btn-sm">
+                        {% trans "Read News" %} <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card h-100 p-4 bg-white rounded-3 shadow-sm">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-question-circle fa-2x text-primary"></i>
+                    </div>
+                    <h3 class="h4 mb-3">{% trans "FAQ" %}</h3>
+                    <p class="text-muted mb-4">{% trans "Find answers to common questions about Christianity." %}</p>
+                    <a href="{% url 'faq:home' %}" class="btn btn-outline-primary btn-sm">
+                        {% trans "Learn More" %} <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card h-100 p-4 bg-white rounded-3 shadow-sm">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-users fa-2x text-primary"></i>
+                    </div>
+                    <h3 class="h4 mb-3">{% trans "Community" %}</h3>
+                    <p class="text-muted mb-4">{% trans "Connect with believers and share your faith journey." %}</p>
+                    <a href="{% url 'testimonials:list' %}" class="btn btn-outline-primary btn-sm">
+                        {% trans "Join Us" %} <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News Section -->
+<section class="latest-news py-7">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-0">{% trans "Latest News" %}</h2>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <a href="{% url 'news:list' %}" class="btn btn-outline-primary">
+                    {% trans "View All News" %} <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for news in latest_news %}
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        {% if news.featured_image %}
+                            <img src="{{ news.featured_image.url }}" class="card-img-top" alt="{{ news.title }}">
+                        {% else %}
+                            <img src="https://images.pexels.com/photos/6647037/pexels-photo-6647037.jpeg" class="card-img-top" alt="{{ news.title }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-primary me-2">{{ news.category.name }}</span>
+                                <small class="text-muted">{{ news.created_at|date:"M d, Y" }}</small>
+                            </div>
+                            <h3 class="h5 card-title mb-3">{{ news.title }}</h3>
+                            <a href="{{ news.get_absolute_url }}" class="btn btn-link text-primary p-0">
+                                {% trans "Read More" %} <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured Verses Section -->
+<section class="featured-verses py-7 bg-light">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-6 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">{% trans "Daily Inspiration" %}</h2>
+                <p class="lead text-muted">{% trans "Find comfort and guidance in God's Word" %}</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for verse in featured_verses %}
+                <div class="col-lg-4">
+                    <div class="verse-card h-100 p-4 bg-white rounded-3 shadow-sm">
+                        <div class="verse-text mb-4">
+                            <i class="fas fa-quote-left text-primary opacity-25 fa-2x mb-3"></i>
+                            <p class="lead">{{ verse.text|truncatewords:25 }}</p>
+                        </div>
+                        <div class="verse-reference">
+                            <h4 class="h6 mb-3">{{ verse.get_reference }}</h4>
+                            <a href="{{ verse.get_absolute_url }}" class="btn btn-outline-primary btn-sm">
+                                {% trans "Read More" %} <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials py-7">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-6 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">{% trans "Faith Stories" %}</h2>
+                <p class="lead text-muted">{% trans "Real stories of transformation and hope" %}</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for testimony in recent_testimonies %}
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                {% if testimony.author_image %}
+                                    <img src="{{ testimony.author_image.url }}" class="rounded-circle me-3" width="60" height="60" alt="{{ testimony.author }}">
+                                {% else %}
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                        <span class="h4 mb-0">{{ testimony.author|first }}</span>
+                                    </div>
+                                {% endif %}
+                                <div>
+                                    <h3 class="h5 mb-1">{{ testimony.author }}</h3>
+                                    <p class="small text-muted mb-0">{{ testimony.created_at|date:"M d, Y" }}</p>
+                                </div>
+                            </div>
+                            <h4 class="h5 mb-3">{{ testimony.title }}</h4>
+                            <p class="text-muted mb-3">{{ testimony.content|safe|truncatewords_html:20 }}</p>
+                            <a href="{{ testimony.get_absolute_url }}" class="btn btn-link text-primary p-0">
+                                {% trans "Read Full Story" %} <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="{% url 'testimonials:submit' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-share me-2"></i>{% trans "Share Your Story" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Preview Section -->
+<section class="faq-preview py-7 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-0">{% trans "Common Questions" %}</h2>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <a href="{% url 'faq:home' %}" class="btn btn-outline-primary">
+                    {% trans "View All FAQs" %} <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="accordion" id="faqAccordion">
+                    {% for question in popular_questions %}
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h3 class="accordion-header" id="heading{{ forloop.counter }}">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}">
+                                    {{ question.question }}
+                                </button>
+                            </h3>
+                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    {{ question.answer|safe|truncatewords_html:50 }}
+                                    <div class="mt-3">
+                                        <a href="{{ question.get_absolute_url }}" class="btn btn-link text-primary p-0">
+                                            {% trans "Read Full Answer" %} <i class="fas fa-arrow-right ms-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Hero Section */
+    .hero {
+        background-color: var(--primary);
+    }
+    
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        opacity: 0.9;
+    }
+    
+    /* Utility Classes */
+    .py-7 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
+    /* Feature Cards */
+    .feature-card {
+        transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgba(48, 86, 211, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Verse Cards */
+    .verse-card {
+        transition: all 0.3s ease;
+    }
+    
+    .verse-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Accordion Customization */
+    .accordion-button:not(.collapsed) {
+        background-color: rgba(48, 86, 211, 0.1);
+        color: var(--primary);
+    }
+    
+    .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(48, 86, 211, 0.1);
+    }
+    
+    /* Animations */
+    .animate__animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+    
+    .animate__fadeInUp {
+        animation-name: fadeInUp;
+    }
+    
+    .animate__fadeInRight {
+        animation-name: fadeInRight;
+    }
+    
+    .animate__delay-1s {
+        animation-delay: 0.2s;
+    }
+    
+    .animate__delay-2s {
+        animation-delay: 0.4s;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 30px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translate3d(30px, 0, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 991.98px) {
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .hero .btn-group {
+            justify-content: center;
+        }
+    }
+</style>
+{% endblock %}

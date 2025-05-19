@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% trans "Submit Your Testimony - Martin Faith" %}{% endblock %}
+
+{% block content %}
+<!-- Submit Testimony Header -->
+<section class="page-header bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">{% trans "Share Your Story" %}</h1>
+        <p class="lead">{% trans "Your testimony can inspire and encourage others in their faith journey" %}</p>
+    </div>
+</section>
+
+<!-- Submit Form -->
+<section class="submit-form py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <h2 class="mb-4">{% trans "Your Testimony" %}</h2>
+                        
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {% trans "Submit Testimony" %}
+                                </button>
+                                <a href="{% url 'testimonials:list' %}" class="btn btn-outline-secondary ms-2">
+                                    {% trans "Cancel" %}
+                                </a>
+                            </div>
+                            
+                            <div class="alert alert-info mt-4">
+                                <p class="mb-0">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    {% trans "Your testimony will be reviewed before being published on our website. Thank you for sharing your story!" %}
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Guidelines -->
+<section class="guidelines py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">{% trans "Testimony Guidelines" %}</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="guideline-item p-3">
+                            <div class="icon-circle mb-3">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h5>{% trans "Be Authentic" %}</h5>
+                            <p>{% trans "Share your real experiences and feelings. Authenticity connects with readers." %}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guideline-item p-3">
+                            <div class="icon-circle mb-3">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h5>{% trans "Be Specific" %}</h5>
+                            <p>{% trans "Include specific details about your journey that others can relate to." %}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="guideline-item p-3">
+                            <div class="icon-circle mb-3">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h5>{% trans "Be Encouraging" %}</h5>
+                            <p>{% trans "Focus on hope and encouragement that can uplift others in their faith." %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #3056D3;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin: 0 auto;
+    }
+    .guideline-item {
+        transition: all 0.3s ease;
+    }
+    .guideline-item:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}

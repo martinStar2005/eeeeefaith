@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ category.name }} - {% trans "News" %} - Martin Faith{% endblock %}
+
+{% block content %}
+<!-- Category Header -->
+<section class="page-header bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">{{ category.name }}</h1>
+        {% if category.description %}
+            <p class="lead">{{ category.description }}</p>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Category News -->
+<section class="category-content py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <nav aria-label="breadcrumb" class="mb-4">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'core:home' %}">{% trans "Home" %}</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'news:list' %}">{% trans "News" %}</a></li>
+                                <li class="breadcrumb-item active">{{ category.name }}</li>
+                            </ol>
+                        </nav>
+
+                        <!-- News List -->
+                        <div class="row g-4">
+                            {% for news in news_list %}
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm hover-card">
+                                        {% if news.featured_image %}
+                                            <img src="{{ news.featured_image.url }}" class="card-img-top" alt="{{ news.title }}">
+                                        {% else %}
+                                            <img src="https://images.pexels.com/photos/6647037/pexels-photo-6647037.jpeg" class="card-img-top" alt="{{ news.title }}">
+                                        {% endif %}
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <span class="badge bg-primary me-2">{{ news.category.name }}</span>
+                                                <small class="text-muted">{{ news.created_at|date:"M d, Y" }}</small>
+                                            </div>
+                                            <h3 class="h5 card-title mb-3">{{ news.title }}</h3>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="stats small text-muted">
+                                                    <span class="me-2"><i class="far fa-eye me-1"></i> {{ news.views }}</span>
+                                                    <span class="me-2"><i class="far fa-heart me-1"></i> {{ news.likes }}</span>
+                                                    <span><i class="far fa-comment me-1"></i> {{ news.comments.count }}</span>
+                                                </div>
+                                                <a href="{{ news.get_absolute_url }}" class="btn btn-primary btn-sm">
+                                                    {% trans "Read More" %}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <div class="col-12 text-center py-5">
+                                    <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+                                    <h3 class="h5">{% trans "No news available" %}</h3>
+                                    <p class="text-muted">{% trans "Check back later for updates." %}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Pagination -->
+                        {% if news_list.has_other_pages %}
+                            <nav class="mt-4">
+                                <ul class="pagination justify-content-center">
+                                    {% if news_list.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ news_list.previous_page_number }}">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% for i in news_list.paginator.page_range %}
+                                        <li class="page-item {% if news_list.number == i %}active{% endif %}">
+                                            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+
+                                    {% if news_list.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ news_list.next_page_number }}">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Categories -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h4 class="h5 mb-0">{% trans "Categories" %}</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            {% for cat in categories %}
+                                <a href="{{ cat.get_absolute_url }}"
+                                   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {% if cat.id == category.id %}active{% endif %}">
+                                    {{ cat.name }}
+                                    <span class="badge bg-primary rounded-pill">
+                                        {{ cat.news.count }}
+                                    </span>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Banner -->
+                <div class="card border-0 rounded overflow-hidden">
+                    <div class="card-body p-0">
+                        <a href="{% url 'testimonials:submit' %}">
+                            <img src="https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg" alt="Share Your Story" class="img-fluid">
+                            <div class="banner-overlay p-4">
+                                <h4 class="text-white mb-0">{% trans "Share Your Story" %}</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hover-card {
+        transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .banner-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.6);
+    }
+</style>
+{% endblock %}

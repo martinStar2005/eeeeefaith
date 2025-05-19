@@ -1,0 +1,2279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-19 17:58+0200\n"
+"PO-Revision-Date: 2025-05-19 21:03+0000\n"
+"Last-Translator:   <mmm@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
+
+#: .\about\models.py:9
+msgid "Biography"
+msgstr ""
+
+#: .\about\models.py:10
+msgid "Mission Statement"
+msgstr ""
+
+#: .\about\models.py:11 .\faq\models.py:32 .\news\models.py:34
+msgid "Meta Description"
+msgstr ""
+
+#: .\about\models.py:13 .\core\models.py:33 .\templates\faq\detail.html:77
+#: .\templates\news\detail.html:80 .\templates\testimonials\detail.html:82
+msgid "Name"
+msgstr "اسم"
+
+#: .\about\models.py:14
+msgid "Profile Image"
+msgstr ""
+
+#: .\about\models.py:15 .\core\forms.py:8 .\core\models.py:34
+#: .\templates\about\contact.html:70 .\templates\about\contact.html:80
+#: .\templates\faq\detail.html:81 .\templates\news\detail.html:84
+#: .\templates\testimonials\detail.html:86 .\testimonials\models.py:19
+msgid "Email"
+msgstr ""
+
+#: .\about\models.py:16 .\templates\about\contact.html:92
+msgid "Phone"
+msgstr "تلفن"
+
+#: .\about\models.py:17 .\core\models.py:12
+msgid "Facebook"
+msgstr ""
+
+#: .\about\models.py:18 .\core\models.py:13
+msgid "Twitter"
+msgstr ""
+
+#: .\about\models.py:19 .\core\models.py:14
+msgid "Instagram"
+msgstr ""
+
+#: .\about\models.py:20 .\core\models.py:15
+msgid "YouTube"
+msgstr ""
+
+#: .\about\models.py:25 .\about\models.py:26 .\templates\about\index.html:15
+#: .\templates\base.html:73 .\templates\base.html:173
+msgid "About"
+msgstr "درباره ما"
+
+#: .\about\views.py:34
+msgid "Your message has been sent successfully. We will get back to you soon!"
+msgstr ""
+
+#: .\about\views.py:37
+msgid "Please fill in all fields."
+msgstr ""
+
+#: .\bible\models.py:8
+msgid "Book Name"
+msgstr ""
+
+#: .\bible\models.py:10 .\faq\models.py:15
+#: .\venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\venv\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: .\bible\models.py:23
+msgid "Chapter Number"
+msgstr ""
+
+#: .\bible\models.py:37
+msgid "Verse Text"
+msgstr ""
+
+#: .\bible\models.py:40
+msgid "Verse Number"
+msgstr ""
+
+#: .\core\forms.py:13
+msgid "No user found with this email address."
+msgstr ""
+
+#: .\core\models.py:7
+msgid "Site Name"
+msgstr ""
+
+#: .\core\models.py:8
+msgid "Tagline"
+msgstr ""
+
+#: .\core\models.py:9
+msgid "Logo"
+msgstr ""
+
+#: .\core\models.py:10
+msgid "Favicon"
+msgstr ""
+
+#: .\core\models.py:11
+msgid "Footer Text"
+msgstr ""
+
+#: .\core\models.py:20 .\core\models.py:21
+msgid "Site Settings"
+msgstr ""
+
+#: .\core\models.py:35 .\news\models.py:33 .\testimonials\models.py:15
+msgid "Content"
+msgstr ""
+
+#: .\core\models.py:36 .\testimonials\models.py:21
+msgid "Approved"
+msgstr ""
+
+#: .\core\models.py:40 .\templates\faq\detail.html:85
+#: .\templates\news\detail.html:88 .\templates\testimonials\detail.html:90
+msgid "Comment"
+msgstr "کامنت"
+
+#: .\core\models.py:41 .\templates\faq\detail.html:69
+#: .\templates\news\detail.html:72 .\templates\testimonials\detail.html:74
+msgid "Comments"
+msgstr "کامنت ها"
+
+#: .\core\views.py:47
+msgid "You have been logged in successfully."
+msgstr "شما با موفقیت وارد سیستم شدید."
+
+#: .\core\views.py:58
+msgid "You have been logged out successfully."
+msgstr "شما با موفقیت از سیستم خارج شدید."
+
+#: .\core\views.py:85
+msgid "You have unliked this."
+msgstr "شما این را نپسندیدید."
+
+#: .\core\views.py:90
+msgid "Thank you for your like!"
+msgstr "ممنون از لایکتون"
+
+#: .\core\views.py:104
+msgid "Object cannot be liked."
+msgstr "شی را نمی توان دوست داشت."
+
+#: .\core\views.py:123
+msgid "Your comment has been submitted and is awaiting approval."
+msgstr "نظر شما ارسال شده است و در انتظار تایید است."
+
+#: .\core\views.py:125
+msgid "There was an error with your comment. Please try again."
+msgstr "در نظر شما خطایی وجود داشت. لطفا دوباره امتحان کنید."
+
+#: .\faq\models.py:12 .\news\models.py:14
+msgid "Category Name"
+msgstr "نام دسته"
+
+#: .\faq\models.py:13 .\news\models.py:15
+msgid "Description"
+msgstr "توضیحات"
+
+#: .\faq\models.py:18
+msgid "FAQ Category"
+msgstr "دسته سوالات متداول"
+
+#: .\faq\models.py:19
+msgid "FAQ Categories"
+msgstr ""
+
+#: .\faq\models.py:30 .\faq\models.py:45
+msgid "Question"
+msgstr ""
+
+#: .\faq\models.py:31
+msgid "Answer"
+msgstr ""
+
+#: .\faq\models.py:34 .\news\models.py:21 .\news\models.py:38
+msgid "Category"
+msgstr ""
+
+#: .\faq\models.py:35 .\news\models.py:40 .\testimonials\models.py:22
+msgid "Featured"
+msgstr ""
+
+#: .\faq\models.py:36 .\news\models.py:41 .\testimonials\models.py:23
+msgid "Views"
+msgstr ""
+
+#: .\faq\models.py:37 .\news\models.py:42 .\testimonials\models.py:24
+msgid "Likes"
+msgstr ""
+
+#: .\faq\models.py:46
+msgid "Questions"
+msgstr ""
+
+#: .\martin_faith\settings.py:123
+msgid "English"
+msgstr ""
+
+#: .\martin_faith\settings.py:124
+msgid "Swedish"
+msgstr ""
+
+#: .\martin_faith\settings.py:125
+msgid "Persian"
+msgstr ""
+
+#: .\news\models.py:22 .\templates\faq\category.html:115
+#: .\templates\faq\detail.html:117 .\templates\news\category.html:109
+#: .\templates\news\detail.html:120 .\templates\news\list.html:24
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: .\news\models.py:32 .\testimonials\models.py:14
+msgid "Title"
+msgstr ""
+
+#: .\news\models.py:35
+msgid "Meta Keywords"
+msgstr ""
+
+#: .\news\models.py:37 .\testimonials\models.py:17
+msgid "Slug"
+msgstr ""
+
+#: .\news\models.py:39
+msgid "Featured Image"
+msgstr ""
+
+#: .\news\models.py:48 .\news\models.py:49 .\templates\base.html:53
+#: .\templates\base.html:169 .\templates\news\category.html:5
+#: .\templates\news\category.html:29 .\templates\news\detail.html:5
+#: .\templates\news\detail.html:27
+msgid "News"
+msgstr "اخبار"
+
+#: .\templates\about\contact.html:5
+msgid "Contact - Martin Faith"
+msgstr "تماس - Martin Faith"
+
+#: .\templates\about\contact.html:11 .\templates\about\index.html:84
+#: .\templates\about\index.html:99 .\templates\about\index.html:167
+#: .\templates\base.html:194 .\templates\faq\home.html:96
+msgid "Contact Us"
+msgstr "تماس با ما"
+
+#: .\templates\about\contact.html:12
+msgid "We'd love to hear from you"
+msgstr "ما دوست داریم از شما بشنویم"
+
+#: .\templates\about\contact.html:24
+msgid "Send a Message"
+msgstr "ارسال پیام"
+
+#: .\templates\about\contact.html:30
+msgid "Your Name"
+msgstr "نام شما"
+
+#: .\templates\about\contact.html:34
+msgid "Email Address"
+msgstr "آدرس ایمیل"
+
+#: .\templates\about\contact.html:38
+msgid "Subject"
+msgstr "موضوع"
+
+#: .\templates\about\contact.html:42
+msgid "Message"
+msgstr "پیام"
+
+#: .\templates\about\contact.html:47 .\templates\base.html:198
+msgid "Send Message"
+msgstr "ارسال پیام"
+
+#: .\templates\about\contact.html:60
+msgid "Contact Information"
+msgstr "اطلاعات تماس"
+
+#: .\templates\about\contact.html:100
+msgid "Connect With Us"
+msgstr "با ما ارتباط برقرار کنید"
+
+#: .\templates\about\contact.html:130 .\templates\base.html:166
+msgid "Quick Links"
+msgstr "لینک های سریع"
+
+#: .\templates\about\contact.html:136
+msgid "About Us"
+msgstr "درباره ما"
+
+#: .\templates\about\contact.html:141 .\templates\base.html:63
+#: .\templates\base.html:171 .\templates\core\home.html:75
+#: .\templates\faq\category.html:5 .\templates\faq\category.html:29
+#: .\templates\faq\detail.html:5 .\templates\faq\detail.html:23
+#: .\templates\faq\search.html:5
+msgid "FAQ"
+msgstr "سوالات متداول"
+
+#: .\templates\about\contact.html:146 .\templates\core\home.html:207
+#: .\templates\faq\detail.html:177 .\templates\news\category.html:132
+#: .\templates\testimonials\detail.html:122
+#: .\templates\testimonials\list.html:15 .\templates\testimonials\list.html:63
+#: .\templates\testimonials\submit.html:12
+msgid "Share Your Story"
+msgstr "داستان خود را به اشتراک بگذارید"
+
+#: .\templates\about\contact.html:151
+msgid "Bible Verses"
+msgstr "آیات کتاب مقدس"
+
+#: .\templates\about\index.html:5
+msgid "About - Martin Faith"
+msgstr "درباره ما - Martin Faith"
+
+#: .\templates\about\index.html:16
+msgid "Learn more about Martin Faith and our mission"
+msgstr "درباره مارتین و ماموریت ما بیشتر بدانید"
+
+#: .\templates\about\index.html:41
+msgid "Connect With Me"
+msgstr "ارتباط با من"
+
+#: .\templates\about\index.html:75
+msgid "Our Mission"
+msgstr "ماموریت ما"
+
+#: .\templates\about\index.html:97
+msgid "About information coming soon"
+msgstr "در مورد اطلاعات به زودی"
+
+#: .\templates\about\index.html:98
+msgid ""
+"We're working on updating this page with more information about Martin "
+"Faith."
+msgstr ""
+"ما در حال به روز رسانی این صفحه با اطلاعات بیشتر درباره مارتین فیث هستیم."
+
+#: .\templates\about\index.html:111 .\templates\core\home.html:41
+msgid "What We Offer"
+msgstr "آنچه ما ارائه می دهیم"
+
+#: .\templates\about\index.html:120 .\templates\core\home.html:63
+#: .\templates\news\list.html:11
+msgid "Christian News"
+msgstr "اخبار مسیحیت"
+
+#: .\templates\about\index.html:121
+msgid ""
+"Stay updated with news about Christians around the world, especially those "
+"facing persecution."
+msgstr ""
+"با اخبار مربوط به مسیحیان در سراسر جهان، به ویژه کسانی که با آزار و اذیت "
+"روبرو هستند، به روز باشید."
+
+#: .\templates\about\index.html:129
+msgid "Bible Resources"
+msgstr "منابع کتاب مقدس"
+
+#: .\templates\about\index.html:130
+msgid ""
+"Access and study Bible verses in multiple languages with commentary and "
+"insights."
+msgstr ""
+"با تفسیر و بینش به آیات کتاب مقدس به چندین زبان دسترسی داشته باشید و مطالعه "
+"کنید."
+
+#: .\templates\about\index.html:138
+msgid "Faith FAQs"
+msgstr "سوالات متداول ایمان"
+
+#: .\templates\about\index.html:139
+msgid ""
+"Find answers to common questions about Christianity and deepen your "
+"understanding."
+msgstr "پاسخ سوالات رایج در مورد مسیحیت را بیابید و درک خود را عمیق تر کنید."
+
+#: .\templates\about\index.html:147 .\templates\base.html:68
+#: .\templates\base.html:172 .\templates\bible\book_detail.html:106
+#: .\templates\testimonials\detail.html:5
+#: .\templates\testimonials\detail.html:19
+#: .\templates\testimonials\list.html:11
+msgid "Testimonials"
+msgstr "توصیفات"
+
+#: .\templates\about\index.html:148
+msgid ""
+"Read inspiring stories of faith and share your own testimony with our "
+"community."
+msgstr ""
+"داستان های الهام بخش ایمان را بخوانید و شهادت خود را با جامعه ما به اشتراک "
+"بگذارید."
+
+#: .\templates\about\index.html:160
+msgid "Join Our Community"
+msgstr "به انجمن ما بپیوندید"
+
+#: .\templates\about\index.html:161
+msgid ""
+"Connect with believers from around the world and be part of our growing "
+"faith community."
+msgstr ""
+"با ایمانداران از سراسر جهان ارتباط برقرار کنید و بخشی از جامعه ایمانی در حال"
+" رشد ما باشید."
+
+#: .\templates\about\index.html:164
+msgid "Login / Sign Up"
+msgstr "ورود / ثبت نام"
+
+#: .\templates\base.html:48 .\templates\base.html:168
+#: .\templates\bible\book_detail.html:26 .\templates\faq\category.html:28
+#: .\templates\faq\detail.html:22 .\templates\news\category.html:28
+#: .\templates\news\detail.html:26 .\templates\testimonials\detail.html:18
+msgid "Home"
+msgstr "صفحه اصلی"
+
+#: .\templates\base.html:58 .\templates\base.html:170
+#: .\templates\bible\book_detail.html:5 .\templates\bible\book_detail.html:27
+#: .\templates\bible\chapter_detail.html:5 .\templates\bible\search.html:5
+#: .\templates\bible\verse_detail.html:5
+msgid "Bible"
+msgstr "کتاب مقدس"
+
+#: .\templates\base.html:121
+msgid "Logout"
+msgstr "خروج از سیستم"
+
+#: .\templates\base.html:125 .\templates\core\login.html:15
+#: .\templates\core\login.html:25
+msgid "Login"
+msgstr "وارد شوید"
+
+#: .\templates\base.html:156
+msgid "Martin Faith"
+msgstr ""
+
+#: .\templates\base.html:161
+msgid ""
+"A multilingual Christian website sharing news, Bible verses, and testimonies"
+" from around the world."
+msgstr ""
+"ک وب‌سایت مسیحی چندزبانه که اخبار، آیات کتاب مقدس و شهادت‌ها را از سراسر "
+"جهان به اشتراک می‌گذارد."
+
+#: .\templates\base.html:177
+msgid "Follow Us"
+msgstr "ما را دنبال کنید"
+
+#: .\templates\base.html:206
+msgid "All rights reserved."
+msgstr "تمامی حقوق محفوظ است."
+
+#: .\templates\base.html:210
+msgid "Coming to Christian"
+msgstr "آمدن به مسیح"
+
+#: .\templates\bible\book_detail.html:33
+msgid "Chapters"
+msgstr "فصل ها"
+
+#: .\templates\bible\book_detail.html:39
+msgid "Chapter"
+msgstr "فصل"
+
+#: .\templates\bible\book_detail.html:44
+msgid "No chapters available."
+msgstr "هیچ فصلی در دسترس نیست."
+
+#: .\templates\bible\book_detail.html:55
+msgid "About This Book"
+msgstr "درباره این کتاب"
+
+#: .\templates\bible\book_detail.html:69
+msgid "Quick Navigation"
+msgstr "ناوبری سریع"
+
+#: .\templates\bible\book_detail.html:95
+msgid "Study Resources"
+msgstr "منابع مطالعه"
+
+#: .\templates\bible\book_detail.html:101 .\templates\bible\home.html:13
+msgid "Search Bible"
+msgstr "جستجوی کتاب مقدس"
+
+#: .\templates\bible\chapter_detail.html:19
+msgid "Verse"
+msgstr "آیه"
+
+#: .\templates\bible\chapter_detail.html:20 .\templates\bible\search.html:40
+msgid "Read"
+msgstr "بخوانید"
+
+#: .\templates\bible\chapter_detail.html:29
+msgid "Previous Chapter"
+msgstr "فصل قبل"
+
+#: .\templates\bible\chapter_detail.html:37
+msgid "Next Chapter"
+msgstr "فصل بعدی"
+
+#: .\templates\bible\home.html:5
+msgid "Bible - Martin Faith"
+msgstr "کتاب مقدس - ایمان مارتین"
+
+#: .\templates\bible\home.html:15
+msgid "Enter your search..."
+msgstr "جستجوی خود را وارد کنید..."
+
+#: .\templates\bible\home.html:35 .\templates\core\home.html:127
+#: .\templates\core\home.html:157 .\templates\faq\category.html:48
+#: .\templates\faq\search.html:49 .\templates\news\category.html:57
+#: .\templates\news\list.html:79
+msgid "Read More"
+msgstr "ادامه مطلب"
+
+#: .\templates\bible\search.html:5 .\templates\bible\search.html:29
+#: .\templates\faq\search.html:5 .\templates\faq\search.html:29
+msgid "Search Results"
+msgstr "نتایج جستجو"
+
+#: .\templates\bible\search.html:14
+msgid "Search the Bible..."
+msgstr "جستجو در کتاب مقدس ..."
+
+#: .\templates\bible\search.html:27 .\templates\faq\search.html:27
+msgid "Search Results for"
+msgstr "نتایج جستجو برای"
+
+#: .\templates\bible\search.html:77
+msgid "No results found for your search."
+msgstr "هیچ نتیجه ای برای جستجوی شما یافت نشد."
+
+#: .\templates\bible\search.html:79
+msgid "Enter a search term to find verses."
+msgstr "برای یافتن آیات عبارت جستجو را وارد کنید."
+
+#: .\templates\bible\verse_detail.html:24
+msgid "View Chapter"
+msgstr "مشاهده فصل"
+
+#: .\templates\bible\verse_detail.html:27 .\templates\faq\detail.html:60
+#: .\templates\news\detail.html:63 .\templates\testimonials\detail.html:65
+msgid "Like"
+msgstr "پسندیدن"
+
+#: .\templates\core\home.html:5
+msgid "Martin Faith - Coming to Christian"
+msgstr "Martin Faith - آمدن به مسیح"
+
+#: .\templates\core\home.html:15
+msgid "Discover Your Faith Journey"
+msgstr "سفر ایمانی خود را کشف کنید"
+
+#: .\templates\core\home.html:18
+msgid ""
+"Explore the Bible, find inspiration, and connect with a community of "
+"believers on your path to Christianity."
+msgstr ""
+"کتاب مقدس را کاوش کنید، الهام بگیرید و با جامعه ای از مؤمنان در مسیر خود به "
+"مسیحیت ارتباط برقرار کنید."
+
+#: .\templates\core\home.html:22
+msgid "Read Bible"
+msgstr "کتاب مقدس را بخوانید"
+
+#: .\templates\core\home.html:25
+msgid "Share Story"
+msgstr "داستان را به اشتراک بگذارید"
+
+#: .\templates\core\home.html:42
+msgid "Discover resources and community support for your faith journey"
+msgstr "منابع و پشتیبانی جامعه را برای سفر ایمانی خود کشف کنید"
+
+#: .\templates\core\home.html:51
+msgid "Bible Study"
+msgstr "مطالعه کتاب مقدس"
+
+#: .\templates\core\home.html:52
+msgid "Access and study Bible verses with commentary and insights."
+msgstr "با تفسیر و بینش به آیات کتاب مقدس دسترسی داشته باشید و مطالعه کنید."
+
+#: .\templates\core\home.html:54
+msgid "Explore"
+msgstr "کاوش کنید"
+
+#: .\templates\core\home.html:64
+msgid "Stay updated with news about Christians worldwide."
+msgstr "با اخبار مربوط به مسیحیان در سراسر جهان به روز باشید."
+
+#: .\templates\core\home.html:66
+msgid "Read News"
+msgstr "اخبار را بخوانید"
+
+#: .\templates\core\home.html:76
+msgid "Find answers to common questions about Christianity."
+msgstr "پاسخ سوالات رایج در مورد مسیحیت را بیابید."
+
+#: .\templates\core\home.html:78
+msgid "Learn More"
+msgstr "بیشتر بدانید"
+
+#: .\templates\core\home.html:87
+msgid "Community"
+msgstr "جامعه"
+
+#: .\templates\core\home.html:88
+msgid "Connect with believers and share your faith journey."
+msgstr ""
+"با ایمانداران ارتباط برقرار کنید و سفر ایمانی خود را به اشتراک بگذارید."
+
+#: .\templates\core\home.html:90
+msgid "Join Us"
+msgstr "به ما بپیوندید"
+
+#: .\templates\core\home.html:103
+msgid "Latest News"
+msgstr "آخرین اخبار"
+
+#: .\templates\core\home.html:107
+msgid "View All News"
+msgstr "مشاهده همه اخبار"
+
+#: .\templates\core\home.html:142
+msgid "Daily Inspiration"
+msgstr "الهام روزانه"
+
+#: .\templates\core\home.html:143
+msgid "Find comfort and guidance in God's Word"
+msgstr "آرامش و راهنمایی را در کلام خدا بیابید"
+
+#: .\templates\core\home.html:172
+msgid "Faith Stories"
+msgstr "داستان های ایمانی"
+
+#: .\templates\core\home.html:173
+msgid "Real stories of transformation and hope"
+msgstr "داستان های واقعی از تحول و امید"
+
+#: .\templates\core\home.html:197 .\templates\testimonials\list.html:45
+msgid "Read Full Story"
+msgstr "داستان کامل را بخوانید"
+
+#: .\templates\core\home.html:219
+msgid "Common Questions"
+msgstr "سوالات متداول"
+
+#: .\templates\core\home.html:223
+msgid "View All FAQs"
+msgstr "مشاهده تمام سوالات متداول"
+
+#: .\templates\core\home.html:242 .\templates\faq\home.html:48
+msgid "Read Full Answer"
+msgstr "پاسخ کامل را بخوانید"
+
+#: .\templates\core\login.html:6
+msgid "Login - Martin Faith"
+msgstr "ورود - Martin Faith"
+
+#: .\templates\core\login.html:18
+msgid ""
+"Please enter your email to login. We'll use your email to identify you."
+msgstr ""
+"لطفا ایمیل خود را برای ورود وارد کنید. ما از ایمیل شما برای شناسایی شما "
+"استفاده خواهیم کرد."
+
+#: .\templates\faq\category.html:55
+msgid "No questions available"
+msgstr "سوالی در دسترس نیست"
+
+#: .\templates\faq\category.html:56 .\templates\news\category.html:67
+msgid "Check back later for updates."
+msgstr "بعداً برای به‌روزرسانی‌ها دوباره بررسی کنید."
+
+#: .\templates\faq\category.html:98 .\templates\faq\detail.html:157
+msgid "Search Questions"
+msgstr "جستجوی سوالات"
+
+#: .\templates\faq\category.html:103 .\templates\faq\detail.html:162
+msgid "Search..."
+msgstr "جستجو..."
+
+#: .\templates\faq\detail.html:47 .\templates\news\detail.html:50
+#: .\templates\testimonials\detail.html:52
+msgid "Share:"
+msgstr "به اشتراک بگذارید:"
+
+#: .\templates\faq\detail.html:75
+msgid "Share Your Thoughts"
+msgstr ""
+"افکار خود را به اشتراک بگذارید\n"
+"\t"
+
+#: .\templates\faq\detail.html:88 .\templates\news\detail.html:91
+#: .\templates\testimonials\detail.html:93
+msgid "Submit Comment"
+msgstr "ارسال نظر"
+
+#: .\templates\faq\detail.html:89 .\templates\news\detail.html:92
+#: .\templates\testimonials\detail.html:94
+msgid "Comments are moderated and will appear after approval."
+msgstr "نظرات تعدیل می شوند و پس از تایید ظاهر می شوند."
+
+#: .\templates\faq\detail.html:104 .\templates\news\detail.html:107
+#: .\templates\testimonials\detail.html:109
+msgid "No comments yet. Be the first to comment!"
+msgstr "هنوز نظری وجود ندارد. اولین نفری باشید که نظر می دهد!"
+
+#: .\templates\faq\detail.html:122
+msgid "All Categories"
+msgstr "همه دسته ها"
+
+#: .\templates\faq\detail.html:136
+msgid "Related Questions"
+msgstr "سوالات مرتبط"
+
+#: .\templates\faq\detail.html:149
+msgid "No related questions available."
+msgstr "سوال مرتبطی موجود نیست"
+
+#: .\templates\faq\detail.html:238 .\templates\news\detail.html:231
+#: .\templates\testimonials\detail.html:231
+msgid "Liked"
+msgstr "پسندید"
+
+#: .\templates\faq\home.html:5
+msgid "Frequently Asked Questions - Martin Faith"
+msgstr "سوالات متداول - Martin faith"
+
+#: .\templates\faq\home.html:11
+msgid "Frequently Asked Questions"
+msgstr "سوالات متداول"
+
+#: .\templates\faq\home.html:12
+msgid "Find answers to common questions about Christianity"
+msgstr "پاسخ سوالات رایج در مورد مسیحیت را بیابید"
+
+#: .\templates\faq\home.html:18 .\templates\faq\search.html:14
+msgid "Search questions..."
+msgstr "جستجوی سوالات..."
+
+#: .\templates\faq\home.html:34
+msgid "Featured Questions"
+msgstr "سوالات ویژه"
+
+#: .\templates\faq\home.html:55
+msgid "No featured questions available yet."
+msgstr "هنوز هیچ سوال ویژه ای موجود نیست."
+
+#: .\templates\faq\home.html:65
+msgid "Browse by Category"
+msgstr "مرور بر اساس دسته"
+
+#: .\templates\faq\home.html:76
+msgid "View Questions"
+msgstr "مشاهده سوالات"
+
+#: .\templates\faq\home.html:82
+msgid "No categories available yet."
+msgstr "هنوز هیچ دسته‌ای موجود نیست."
+
+#: .\templates\faq\home.html:94
+msgid "Can't Find What You're Looking For?"
+msgstr "نمی توانید آنچه را که به دنبالش هستید پیدا کنید؟"
+
+#: .\templates\faq\home.html:95
+msgid ""
+"If you have a question about Christianity that's not answered here, please "
+"reach out to us."
+msgstr ""
+"اگر سؤالی در مورد مسیحیت دارید که در اینجا پاسخ داده نشده است، لطفاً با ما "
+"تماس بگیرید."
+
+#: .\templates\faq\search.html:88
+msgid "No results found"
+msgstr "هیچ نتیجه ای یافت نشد"
+
+#: .\templates\faq\search.html:89
+msgid "Try different keywords or browse our FAQ categories."
+msgstr ""
+"کلمات کلیدی مختلف را امتحان کنید یا دسته بندی سوالات متداول ما را مرور کنید."
+
+#: .\templates\faq\search.html:91
+msgid "Browse FAQ Categories"
+msgstr ""
+"دسته بندی سوالات متداول را مرور کنید\n"
+"\t"
+
+#: .\templates\faq\search.html:95
+msgid "Enter your search"
+msgstr "جستجوی خود را وارد کنید"
+
+#: .\templates\faq\search.html:96
+msgid "Type keywords to search through our FAQ database."
+msgstr ""
+"کلمات کلیدی را برای جستجو از طریق پایگاه داده سوالات متداول ما تایپ کنید."
+
+#: .\templates\news\category.html:66 .\templates\news\list.html:86
+msgid "No news available"
+msgstr "خبری در دسترس نیست"
+
+#: .\templates\news\detail.html:78 .\templates\testimonials\detail.html:80
+msgid "Leave a Comment"
+msgstr "نظر بدهید"
+
+#: .\templates\news\detail.html:125 .\templates\news\list.html:29
+msgid "All News"
+msgstr "همه اخبار"
+
+#: .\templates\news\detail.html:139
+msgid "Related News"
+msgstr "اخبار مرتبط"
+
+#: .\templates\news\detail.html:159
+msgid "No related news available."
+msgstr "هیچ خبر مرتبطی در دسترس نیست"
+
+#: .\templates\news\detail.html:170 .\templates\testimonials\detail.html:170
+msgid "Explore Bible Verses"
+msgstr "آیات کتاب مقدس را کاوش کنید"
+
+#: .\templates\news\list.html:5
+msgid "News - Martin Faith"
+msgstr "اخبار - Martin Faith"
+
+#: .\templates\news\list.html:12
+msgid "Stay updated with news about Christians around the world"
+msgstr "با اخبار مربوط به مسیحیان در سراسر جهان به روز باشید"
+
+#: .\templates\news\list.html:42
+msgid "Search"
+msgstr "جستجو کنید"
+
+#: .\templates\news\list.html:47
+msgid "Search news..."
+msgstr "جستجوی اخبار..."
+
+#: .\templates\news\list.html:87
+msgid "Check back later for updates or try a different category."
+msgstr ""
+"بعداً برای به‌روزرسانی‌ها دوباره بررسی کنید یا دسته دیگری را امتحان کنید."
+
+#: .\templates\testimonials\detail.html:125
+msgid ""
+"Your testimony can inspire others and bring glory to God. Everyone has a "
+"unique journey worth sharing."
+msgstr ""
+"شهادت شما می تواند الهام بخش دیگران باشد و خدا را جلال دهد. هر کس یک سفر "
+"منحصر به فرد دارد که ارزش اشتراک گذاری دارد"
+
+#: .\templates\testimonials\detail.html:127
+msgid "Submit Your Testimony"
+msgstr "شهادت خود را ارسال کنید"
+
+#: .\templates\testimonials\detail.html:135
+msgid "More Testimonials"
+msgstr "توصیفات بیشتر"
+
+#: .\templates\testimonials\detail.html:155
+msgid "No related testimonials available."
+msgstr "هیچ گواهی مرتبطی در دسترس نیست."
+
+#: .\templates\testimonials\detail.html:159
+msgid "View All Testimonials"
+msgstr "مشاهده تمام توصیفات"
+
+#: .\templates\testimonials\list.html:5
+msgid "Testimonials - Martin Faith"
+msgstr "توصیفات - Martin Faith"
+
+#: .\templates\testimonials\list.html:12
+msgid "Real stories of faith and transformation from around the world"
+msgstr "داستان های واقعی ایمان و تحول از سراسر جهان"
+
+#: .\templates\testimonials\list.html:60
+msgid "No testimonials available"
+msgstr "هیچ گواهی در دسترس نیست"
+
+#: .\templates\testimonials\list.html:61
+msgid "Be the first to share your story!"
+msgstr "اولین نفری باشید که داستان خود را به اشتراک می گذارد!"
+
+#: .\templates\testimonials\list.html:119
+msgid "Your Story Matters"
+msgstr "داستان شما مهم است"
+
+#: .\templates\testimonials\list.html:120
+msgid ""
+"Sharing your testimony can inspire others and bring glory to God. Everyone "
+"has a unique journey worth sharing."
+msgstr ""
+"به اشتراک گذاشتن شهادت خود می تواند الهام بخش دیگران باشد و خدا را جلال دهد."
+" هر کس یک سفر منحصر به فرد دارد که ارزش اشتراک گذاری دارد."
+
+#: .\templates\testimonials\list.html:124
+msgid "Share Your Testimony"
+msgstr "شهادت خود را به اشتراک بگذارید"
+
+#: .\templates\testimonials\submit.html:6
+msgid "Submit Your Testimony - Martin Faith"
+msgstr "شهادت خود را ارسال کنید - Martin Faith"
+
+#: .\templates\testimonials\submit.html:13
+msgid "Your testimony can inspire and encourage others in their faith journey"
+msgstr "شهادت شما می تواند الهام بخش و تشویق دیگران در سفر ایمانی آنها باشد"
+
+#: .\templates\testimonials\submit.html:24
+msgid "Your Testimony"
+msgstr "شهادت شما"
+
+#: .\templates\testimonials\submit.html:32
+msgid "Submit Testimony"
+msgstr "ارائه شهادت"
+
+#: .\templates\testimonials\submit.html:35
+msgid "Cancel"
+msgstr "لغو کنید"
+
+#: .\templates\testimonials\submit.html:42
+msgid ""
+"Your testimony will be reviewed before being published on our website. Thank"
+" you for sharing your story!"
+msgstr ""
+"شهادت شما قبل از انتشار در وب سایت ما بررسی می شود. با تشکر از شما برای به "
+"اشتراک گذاری داستان خود!"
+
+#: .\templates\testimonials\submit.html:58
+msgid "Testimony Guidelines"
+msgstr "رهنمودهای شهادت"
+
+#: .\templates\testimonials\submit.html:65
+msgid "Be Authentic"
+msgstr "معتبر باشید"
+
+#: .\templates\testimonials\submit.html:66
+msgid ""
+"Share your real experiences and feelings. Authenticity connects with "
+"readers."
+msgstr ""
+"تجربیات و احساسات واقعی خود را به اشتراک بگذارید. اصالت با خوانندگان ارتباط "
+"برقرار می کند."
+
+#: .\templates\testimonials\submit.html:74
+msgid "Be Specific"
+msgstr "خاص باشید"
+
+#: .\templates\testimonials\submit.html:75
+msgid "Include specific details about your journey that others can relate to."
+msgstr ""
+"جزئیات خاصی را در مورد سفر خود درج کنید که دیگران بتوانند با آن ارتباط "
+"برقرار کنند."
+
+#: .\templates\testimonials\submit.html:83
+msgid "Be Encouraging"
+msgstr "دلگرم کننده باشید"
+
+#: .\templates\testimonials\submit.html:84
+msgid "Focus on hope and encouragement that can uplift others in their faith."
+msgstr "بر امید و تشویقی تمرکز کنید که می تواند ایمان دیگران را تقویت کند."
+
+#: .\testimonials\models.py:18
+msgid "Author Name"
+msgstr ""
+
+#: .\testimonials\models.py:20
+msgid "Author Image"
+msgstr ""
+
+#: .\testimonials\models.py:30
+msgid "Testimony"
+msgstr ""
+
+#: .\testimonials\models.py:31
+msgid "Testimonies"
+msgstr ""
+
+#: .\testimonials\views.py:62
+msgid ""
+"Your testimony has been submitted and is awaiting approval. Thank you for "
+"sharing your story!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
+msgid "Search files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:32
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:33
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:34
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:104
+#: .\venv\Lib\site-packages\django\forms\fields.py:760
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:165
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:176
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:259
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:267
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:279
+#: .\venv\Lib\site-packages\django\core\validators.py:306
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:286
+#: .\venv\Lib\site-packages\django\core\validators.py:307
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:298
+#: .\venv\Lib\site-packages\django\core\validators.py:305
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:341
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:347
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:382
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:391
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:400
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:407
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:439
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:457
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:480
+#: .\venv\Lib\site-packages\django\forms\fields.py:355
+#: .\venv\Lib\site-packages\django\forms\fields.py:394
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:482
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:487
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:492
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:563
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:624
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1473
+#: .\venv\Lib\site-packages\django\forms\models.py:906
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1475
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:133
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:140
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:179
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1155
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1156
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1158
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1208
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1210
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1314
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1415
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1419
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1554
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1423
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1550
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1558
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1563
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1690
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1692
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1853
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1857
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1909
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1934
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2012
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2014
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2054
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2056
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2152
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2169
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2177
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2208
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2301
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2302
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2304
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2355
+msgid "Positive big integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2370
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2385
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2401
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2437
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2512
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2516
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2520
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2628
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2652
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2717
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2719
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:232
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:393
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "A JSON object"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:28
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:939
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:941
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1235
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1292
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1294
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1342
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the
+#. label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:185
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:95
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:304
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:475
+#: .\venv\Lib\site-packages\django\forms\fields.py:1252
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:498
+#: .\venv\Lib\site-packages\django\forms\fields.py:1253
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:525
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:559
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:560
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:629
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:630
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:631
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:633
+#, python-format
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:638
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:702
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:874
+#: .\venv\Lib\site-packages\django\forms\fields.py:960
+#: .\venv\Lib\site-packages\django\forms\models.py:1585
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:962
+#: .\venv\Lib\site-packages\django\forms\fields.py:1081
+#: .\venv\Lib\site-packages\django\forms\models.py:1583
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1082
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1321
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1351
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:94
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:231
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:899
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:904
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:911
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:920
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1357
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1448
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1587
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:227
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:461
+msgid "Clear"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:462
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:463
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:800
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:801
+msgid "Yes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:802
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:876
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:906
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:923
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:925
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:927
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:929
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:931
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:933
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:70
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:270
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:289
+#: .\venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\translation\__init__.py:290
+msgid "name"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:349
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:68
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:220
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:221
+#, python-format
+msgid ""
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:229
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:230
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:238
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:239
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:247
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\etc\admin\models.py:38
+msgid "Custom page"
+msgstr ""
+
+#: .\venv\Lib\site-packages\etc\admin\models.py:79
+msgid "Done."
+msgstr ""

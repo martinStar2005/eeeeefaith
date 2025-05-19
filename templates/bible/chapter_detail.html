@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ chapter }} - {% trans "Bible" %}{% endblock %}
+
+{% block content %}
+<section class="chapter-detail py-5">
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="mb-4">{{ chapter }}</h1>
+                
+                <div class="verses-list">
+                    {% for verse in verses %}
+                        <div class="verse-item mb-4 p-3 bg-light rounded">
+                            <p class="lead mb-2">{{ verse.text }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">{% trans "Verse" %} {{ verse.number }}</span>
+                                <a href="{{ verse.get_absolute_url }}" class="btn btn-primary btn-sm">{% trans "Read" %}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    {% if prev_chapter %}
+                        <a href="{{ prev_chapter.get_absolute_url }}" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-1"></i> {% trans "Previous Chapter" %}
+                        </a>
+                    {% else %}
+                        <div></div>
+                    {% endif %}
+                    
+                    {% if next_chapter %}
+                        <a href="{{ next_chapter.get_absolute_url }}" class="btn btn-outline-primary">
+                            {% trans "Next Chapter" %} <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "About - Martin Faith" %}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ about.meta_description|default:'About Martin Faith - Christian website' }}">
+{% endblock %}
+
+{% block content %}
+<!-- About Header -->
+<section class="page-header bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">{% trans "About" %}</h1>
+        <p class="lead">{% trans "Learn more about Martin Faith and our mission" %}</p>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content py-5">
+    <div class="container">
+        {% if about %}
+            <div class="row align-items-center mb-5">
+                <div class="col-md-5 mb-4 mb-md-0">
+                    {% if about.profile_image %}
+                        <img src="{{ about.profile_image.url }}" class="img-fluid rounded shadow" alt="{{ about.name }}">
+                    {% else %}
+                        <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded shadow" alt="{{ about.name }}">
+                    {% endif %}
+                </div>
+                <div class="col-md-7">
+                    <h2 class="mb-3">{{ about.name }}</h2>
+                    <div class="mb-4 about-bio">
+                        {{ about.bio|safe }}
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    {% if about.facebook or about.twitter or about.instagram or about.youtube %}
+                        <div class="social-links mt-4">
+                            <h5 class="mb-3">{% trans "Connect With Me" %}</h5>
+                            <div class="d-flex">
+                                {% if about.facebook %}
+                                    <a href="{{ about.facebook }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                {% endif %}
+                                {% if about.twitter %}
+                                    <a href="{{ about.twitter }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                {% endif %}
+                                {% if about.instagram %}
+                                    <a href="{{ about.instagram }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                {% endif %}
+                                {% if about.youtube %}
+                                    <a href="{{ about.youtube }}" class="btn btn-outline-primary me-2" target="_blank">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Mission Statement -->
+            {% if about.mission %}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h4 class="mb-0">{% trans "Our Mission" %}</h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="lead mb-0">{{ about.mission }}</p>
+                                    </div>
+                                    <div class="col-md-4 d-flex align-items-center justify-content-center mt-4 mt-md-0">
+                                        <a href="{% url 'about:contact' %}" class="btn btn-primary">
+                                            {% trans "Contact Us" %}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="row">
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-user-circle fa-4x text-muted mb-3"></i>
+                    <h4>{% trans "About information coming soon" %}</h4>
+                    <p>{% trans "We're working on updating this page with more information about Martin Faith." %}</p>
+                    <a href="{% url 'about:contact' %}" class="btn btn-primary mt-3">{% trans "Contact Us" %}</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2>{% trans "What We Offer" %}</h2>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="feature-item p-4 text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-newspaper fa-3x text-primary"></i>
+                    </div>
+                    <h3>{% trans "Christian News" %}</h3>
+                    <p>{% trans "Stay updated with news about Christians around the world, especially those facing persecution." %}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-item p-4 text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-bible fa-3x text-primary"></i>
+                    </div>
+                    <h3>{% trans "Bible Resources" %}</h3>
+                    <p>{% trans "Access and study Bible verses in multiple languages with commentary and insights." %}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-item p-4 text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-question-circle fa-3x text-primary"></i>
+                    </div>
+                    <h3>{% trans "Faith FAQs" %}</h3>
+                    <p>{% trans "Find answers to common questions about Christianity and deepen your understanding." %}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-item p-4 text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-comment-alt fa-3x text-primary"></i>
+                    </div>
+                    <h3>{% trans "Testimonials" %}</h3>
+                    <p>{% trans "Read inspiring stories of faith and share your own testimony with our community." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2>{% trans "Join Our Community" %}</h2>
+                <p class="lead mb-4">{% trans "Connect with believers from around the world and be part of our growing faith community." %}</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="{% url 'core:login' %}" class="btn btn-primary btn-lg px-4 me-sm-3">
+                        {% trans "Login / Sign Up" %}
+                    </a>
+                    <a href="{% url 'about:contact' %}" class="btn btn-outline-primary btn-lg px-4">
+                        {% trans "Contact Us" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .about-bio {
+        line-height: 1.8;
+    }
+    .feature-item {
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        height: 100%;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .feature-item:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}

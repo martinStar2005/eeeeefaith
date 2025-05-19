@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Frequently Asked Questions - Martin Faith" %}{% endblock %}
+
+{% block content %}
+<!-- FAQ Header -->
+<section class="page-header bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">{% trans "Frequently Asked Questions" %}</h1>
+        <p class="lead">{% trans "Find answers to common questions about Christianity" %}</p>
+        
+        <!-- Search Form -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form action="{% url 'faq:search' %}" method="get" class="d-flex">
+                    <input type="text" name="q" class="form-control form-control-lg" placeholder="{% trans 'Search questions...' %}">
+                    <button type="submit" class="btn btn-light ms-2">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Content -->
+<section class="faq-content py-5">
+    <div class="container">
+        <!-- Featured Questions -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">{% trans "Featured Questions" %}</h2>
+                
+                <div class="accordion" id="featuredFAQAccordion">
+                    {% for question in featured_questions %}
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="featured-heading-{{ question.id }}">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#featured-collapse-{{ question.id }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="featured-collapse-{{ question.id }}">
+                                    {{ question.question }}
+                                </button>
+                            </h2>
+                            <div id="featured-collapse-{{ question.id }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="featured-heading-{{ question.id }}" data-bs-parent="#featuredFAQAccordion">
+                                <div class="accordion-body">
+                                    {{ question.answer|safe|truncatewords_html:50 }}
+                                    <div class="mt-3">
+                                        <a href="{{ question.get_absolute_url }}" class="btn btn-sm btn-primary">{% trans "Read Full Answer" %}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="text-center py-4">
+                            <p>{% trans "No featured questions available yet." %}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Categories -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center mb-4">{% trans "Browse by Category" %}</h2>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for category in categories %}
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-3">{{ category.name }}</h3>
+                            <p class="card-text text-muted">{{ category.description }}</p>
+                            <a href="{{ category.get_absolute_url }}" class="btn btn-outline-primary">{% trans "View Questions" %}</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-center">
+                    <p>{% trans "No categories available yet." %}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Call to Action -->
+<section class="cta-section py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3">{% trans "Can't Find What You're Looking For?" %}</h2>
+                <p class="lead mb-4">{% trans "If you have a question about Christianity that's not answered here, please reach out to us." %}</p>
+                <a href="{% url 'about:contact' %}" class="btn btn-primary">{% trans "Contact Us" %}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hover-card {
+        transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .accordion-button:not(.collapsed) {
+        background-color: rgba(48, 86, 211, 0.1);
+        color: #3056D3;
+    }
+</style>
+{% endblock %}

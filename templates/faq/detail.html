@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ question.question }} - {% trans "FAQ" %} - Martin Faith{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ question.meta_description|default:question.question }}">
+{% endblock %}
+
+{% block content %}
+<!-- Question Detail -->
+<section class="question-detail py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <nav aria-label="breadcrumb" class="mb-4">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'core:home' %}">{% trans "Home" %}</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'faq:home' %}">{% trans "FAQ" %}</a></li>
+                                <li class="breadcrumb-item"><a href="{{ question.category.get_absolute_url }}">{{ question.category.name }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ question.question|truncatechars:30 }}</li>
+                            </ol>
+                        </nav>
+                        
+                        <h1 class="mb-4">{{ question.question }}</h1>
+                        
+                        <div class="d-flex align-items-center mb-4">
+                            <span class="badge bg-primary me-2">{{ question.category.name }}</span>
+                            <span class="text-muted me-3"><i class="far fa-eye me-1"></i> {{ question.views }}</span>
+                            <span class="text-muted me-3 like-count"><i class="far fa-heart me-1"></i> <span id="like-count">{{ question.likes }}</span></span>
+                            <span class="text-muted"><i class="far fa-comment me-1"></i> {{ comments.count }}</span>
+                        </div>
+                        
+                        <div class="answer-content mb-4">
+                            <div class="p-4 bg-light rounded">
+                                {{ question.answer|safe }}
+                            </div>
+                        </div>
+                        
+                        <!-- Like Button and Share -->
+                        <div class="d-flex justify-content-between align-items-center my-4">
+                            <div class="social-share">
+                                <span class="me-2">{% trans "Share:" %}</span>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" class="btn btn-sm btn-outline-primary me-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ question.question }}" target="_blank" class="btn btn-sm btn-outline-primary me-1">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="mailto:?subject={{ question.question }}&body={{ request.build_absolute_uri }}" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                            
+                            <button class="btn btn-outline-danger like-button" data-content-type="{{ content_type_id }}" data-object-id="{{ question.id }}">
+                                <i class="far fa-heart me-1"></i> {% trans "Like" %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comments Section -->
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0">{% trans "Comments" %} ({{ comments.count }})</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- Comment Form -->
+                        <form method="post" action="{% url 'core:add_comment' content_type_id question.id %}" class="mb-4">
+                            {% csrf_token %}
+                            <h5>{% trans "Share Your Thoughts" %}</h5>
+                            <div class="mb-3">
+                                <label for="id_name" class="form-label">{% trans "Name" %}</label>
+                                <input type="text" name="name" id="id_name" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_email" class="form-label">{% trans "Email" %}</label>
+                                <input type="email" name="email" id="id_email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_content" class="form-label">{% trans "Comment" %}</label>
+                                <textarea name="content" id="id_content" rows="3" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">{% trans "Submit Comment" %}</button>
+                            <small class="d-block text-muted mt-2">{% trans "Comments are moderated and will appear after approval." %}</small>
+                        </form>
+                        
+                        <!-- Comments List -->
+                        <div class="comments-list">
+                            {% for comment in comments %}
+                                <div class="comment-item mb-3 p-3 border rounded">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h5 class="mb-0">{{ comment.name }}</h5>
+                                        <small class="text-muted">{{ comment.created_at|date:"F d, Y" }}</small>
+                                    </div>
+                                    <p class="mb-0">{{ comment.content }}</p>
+                                </div>
+                            {% empty %}
+                                <div class="text-center py-3">
+                                    <p class="text-muted mb-0">{% trans "No comments yet. Be the first to comment!" %}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Categories -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">{% trans "Categories" %}</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{% url 'faq:home' %}" class="text-decoration-none text-dark">{% trans "All Categories" %}</a>
+                            </li>
+                            {% for cat in question.category.get_root_nodes %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a href="{{ cat.get_absolute_url }}" class="text-decoration-none text-dark">{{ cat.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Related Questions -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">{% trans "Related Questions" %}</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for related in related_questions %}
+                            <div class="mb-3 pb-3 {% if not forloop.last %}border-bottom{% endif %}">
+                                <h6 class="mb-2"><a href="{{ related.get_absolute_url }}" class="text-decoration-none">{{ related.question }}</a></h6>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <span class="me-2"><i class="far fa-eye me-1"></i> {{ related.views }}</span>
+                                    <span class="me-2"><i class="far fa-heart me-1"></i> {{ related.likes }}</span>
+                                    <span><i class="far fa-comment me-1"></i> {{ related.comments.count }}</span>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p class="text-muted">{% trans "No related questions available." %}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">{% trans "Search Questions" %}</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'faq:search' %}" method="get">
+                            <div class="input-group">
+                                <input type="text" name="q" class="form-control" placeholder="{% trans 'Search...' %}">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Featured Banner -->
+                <div class="card border-0 rounded overflow-hidden">
+                    <div class="card-body p-0">
+                        <a href="{% url 'testimonials:submit' %}">
+                            <img src="https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Share Your Story" class="img-fluid">
+                            <div class="banner-overlay p-4">
+                                <h4 class="text-white mb-0">{% trans "Share Your Story" %}</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .answer-content {
+        line-height: 1.8;
+    }
+    .banner-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.6);
+    }
+    .like-button:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Like functionality
+        const likeButton = document.querySelector('.like-button');
+        if (likeButton) {
+            likeButton.addEventListener('click', function() {
+                const contentType = this.dataset.contentType;
+                const objectId = this.dataset.objectId;
+                
+                fetch(`/like/${contentType}/${objectId}/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update the like count
+                        document.getElementById('like-count').textContent = data.likes;
+                        
+                        // Animate heart icon
+                        const heartIcon = likeButton.querySelector('i');
+                        heartIcon.classList.remove('far');
+                        heartIcon.classList.add('fas', 'text-danger');
+                        
+                        // Disable button after clicking
+                        likeButton.disabled = true;
+                        likeButton.innerHTML = '<i class="fas fa-heart me-1"></i> ' + '{% trans "Liked" %}';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        }
+    });
+</script>
+{% endblock %}
